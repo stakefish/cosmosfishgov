@@ -1,0 +1,88 @@
+extends layout
+
+block content
+  .container
+    .page_header
+      h1.h3 Cosmos Gov
+      p.lead All governance proposals
+    .row
+      .col-xs-12.col-md-4.order-md-2
+        .card.card--accent.block_item
+          .card__inner
+            h5 Current Block
+            .block_item__number= block[0].block_height.toLocaleString()
+            .block_item__time= block[0].block_time_relative
+            .block_item__desc.block_desc
+              .row
+                .col
+                  .block_desc__title Avg block time
+                  .block_desc__value= Math.round(block[0].time_from_prev/100)/10 + " seconds"
+
+        .card_group.d-none.d-md-block
+          h5.text-gray Previous blocks
+          each val in block.slice(1,10)
+            .card.block_item
+              .card__inner
+                .row.align-items-center
+                  .col.col-xs-12.col-sm-6.col-md-12.col-lg-5
+                    .block_item__number= val.block_height.toLocaleString()
+                    .block_item__time= val.block_time_relative
+                  .col.col-xs-12.col-sm-6.col-md-12.col-lg-7
+                    ul.block_item__desc.block_desc
+                      li.block_desc__row
+                        span.block_desc__title Block time
+                        span.block_desc__value= Math.round(val.time_from_prev/100)/10 + " seconds"
+
+      .col-xs-12.col-md-8.order-md-1
+        .row.align-content-between
+          .col.col-6
+            include partials/filter
+          .col.col-6.text-right
+            include partials/subscribe
+
+        ul.card_list
+          each val in gov
+            li.card(data-type=val.proposal_status.toLowerCase())
+              .proposal_success(class='proposal_success--' + val.proposal_status.toLowerCase())
+                span= val.proposal_status.replace(/([a-z])([A-Z])/g, '$1 $2')
+              .card__inner
+                .card__content
+                  .card__title= val.title
+                  .proposal_deadline
+                    .proposal_number= "#" + val.proposal_id
+                    .proposal_deadline__block
+                      | Proposal submitted
+                      br
+                      | on&nbsp;block&nbsp;
+                      span= val.submit_block.toLocaleString()
+                    if val.voting_start_block > 0
+                      .proposal_deadline__block
+                        | Voting started
+                        br
+                        | on&nbsp;block&nbsp;
+                        span= val.voting_start_block.toLocaleString()
+                    if val.time_left_to_vote > 0
+                      .proposal_deadline__title= val.time_left_to_vote + " left"
+                    .proposal_deadline__hint= "Deposit amount: " + val.total_deposit
+                  .card__text= val.description
+                  if val.total_votes
+                    .proposal_votes.row
+                      .proposal_votes__col.col.col-auto
+                        .proposal_votes__title Yes
+                        .proposal_votes__value= Math.round((100 * val.tally_result.yes) / val.total_votes) + '%'
+                        .proposal_votes__total= Math.round(val.tally_result.yes) + " votes"
+                      .proposal_votes__col.col.col-auto
+                        .proposal_votes__title
+                          | No +&nbsp;
+                          span.text-primary With Veto
+                        .proposal_votes__value
+                          span= Math.round((100 * val.tally_result.no)/val.total_votes) + ' + '
+                          span.text-primary= Math.round((100 * val.tally_result.no_with_veto)/val.total_votes) + '%'
+                        .proposal_votes__total
+                          span= Math.round(val.tally_result.no) + ' + '
+                          span.text-primary= Math.round(val.tally_result.no_with_veto)
+                          | &nbsp;votes
+                      .proposal_votes__col.col.col-auto
+                        .proposal_votes__title Abstain
+                        .proposal_votes__value= Math.round((100 * val.tally_result.abstain) / val.total_votes) + '%'
+                        .proposal_votes__total= Math.round(val.tally_result.abstain) + " votes"

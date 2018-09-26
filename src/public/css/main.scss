@@ -1,0 +1,127 @@
+@import "themes/cosmos/variables";
+
+@import "lib/bootstrap/bootstrap";
+@import "lib/bootstrap-select/bootstrap-select";
+
+@import "themes/cosmos/cosmos";
+
+// Scaffolding
+// -------------------------
+
+html {
+  position: relative;
+  min-height: 100%;
+
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+
+  p, ul {
+    margin-bottom: 0;
+  }
+}
+
+
+// Common
+// -------------------------
+
+.hide {
+  display: none;
+}
+
+// Input Fields
+// -------------------------
+
+textarea {
+  resize: vertical;
+}
+
+// Navbar
+// -------------------------
+.navbar {
+  height: 64px;
+
+  ~ .main {
+    margin-top: 64px;
+  }
+}
+
+.navbar-nav img {
+  width: 30px;
+  height: 30px;
+  margin: -15px 15px -15px;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+  color: $gray-darker;
+}
+
+
+// Nav-pills
+// -------------------------
+
+.nav-pills {
+  margin-bottom: 28px;
+}
+
+.nav-link {
+  padding: 8px 14px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  border-radius: 4px;
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+// Alerts
+// -------------------------
+
+.alert {
+  margin-top: 20px;
+}
+
+// Thumbnails
+// -------------------------
+
+.thumbnail {
+  padding: 0;
+  border-radius: 0;
+  box-shadow: 0 0 5px #ccc, inset 0 0 0 #000;
+}
+
+// Font Icons
+// -------------------------
+
+.fa {
+  margin-right: 6px;
+}
+
+
+.main {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.container {
+  max-width: 1140px;
+}
+
+.form-control {
+  height: $input-height-base;
+}

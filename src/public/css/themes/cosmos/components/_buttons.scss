@@ -1,0 +1,108 @@
+.btn {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.65;
+  letter-spacing: normal;
+  color: $white;
+  border-radius: 4px;
+  padding: 11px 12px;
+  border: 0;
+  transition: all .4s cubic-bezier(.24,.45,.46,.92);
+
+  &:focus {
+    outline: none !important;
+  }
+
+  .icon {
+    margin-right: 12px;
+    font-size: 22px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+  }
+
+  &--flat {
+    font-size: 16px;
+    font-weight: 600;
+    color: $gray-darker;
+    background-color: transparent;
+
+    &:hover,
+    &:active {
+      background-color: transparent !important;
+      color: $brand-primary !important;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.btn--primary {
+      font-weight: bold;
+      color: $brand-primary !important;
+    }
+  }
+
+  &--circle {
+    padding: 13px;
+    border-radius: 100px;
+
+    .icon {
+      margin-right: 0;
+      display: block;
+      top: 0;
+
+      &--dropdown {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &[disabled] {
+    background-color: #f5f5f7 !important;
+    box-shadow: none !important;
+    color: #a9b0c2 !important;
+    cursor: default !important;
+  }
+}
+
+.btn-default {
+  background-color: #a9b0c2;
+  box-shadow: 0 6px 12px 0 rgba(148, 153, 166, 0.2), 0 2px 4px 0 rgba(148, 153, 166, 0.12);
+
+  &:focus {
+    outline: none !important;
+    box-shadow: 0 2px 4px 0 rgba(148, 153, 166, 0.2), 0 0 2px 0 rgba(148, 153, 166, 0.12);
+  }
+
+  &:hover {
+    background-color: #7d8499;
+    box-shadow: 0 6px 12px 0 rgba(148, 153, 166, 0.2), 0 2px 4px 0 rgba(148, 153, 166, 0.12);
+  }
+
+  &:active {
+    background-color: #a9b0c2;
+    box-shadow: 0 2px 4px 0 rgba(148, 153, 166, 0.2), 0 0 2px 0 rgba(148, 153, 166, 0.12);
+  }
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #2957eb;
+  box-shadow: 0 6px 12px 0 rgba(29, 70, 199, 0.2), 0 2px 4px 0 rgba(29, 70, 199, 0.12);
+
+  &:focus {
+    outline: none !important;
+    box-shadow: 0 2px 4px 0 rgba(29, 70, 199, 0.2), 0 0 2px 0 rgba(29, 70, 199, 0.12) !important;
+  }
+
+  &:hover {
+    background-color: #1d46c7;
+    box-shadow: 0 6px 12px 0 rgba(29, 70, 199, 0.2), 0 2px 4px 0 rgba(29, 70, 199, 0.12);
+  }
+
+  &:active {
+    background-color: #2957eb;
+    box-shadow: 0 2px 4px 0 rgba(29, 70, 199, 0.2), 0 0 2px 0 rgba(29, 70, 199, 0.12);
+  }
+}

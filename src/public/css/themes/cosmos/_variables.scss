@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900');
+
+// Colors
+// -------------------------
+
+$white: #fff;
+$gray-lighter: #f7f7f8;
+$gray-light: #e1e3e8;
+$gray: #9499a6;
+$gray-dark: #43495b;
+$gray-darker: #00030e;
+
+$brand-primary: #2957eb;
+$brand-success: #10bf00;
+$brand-danger: #ff005e;
+$brand-warning: #ffbf00;
+$brand-info: $brand-primary;
+
+// Typography
+// -------------------------
+
+$font-size-base: 13;
+$headings-font-family: 'Nunito Sans', sans-serif;
+$font-family-base: 'Nunito Sans', sans-serif;
+$headings-font-weight: 700;
+$text-color: $gray-darker;
+$link-color: $brand-primary;
+$link-hover-color: $gray-darker;
+
+// Dropdowns
+// -------------------------
+
+$dropdown-link-color: $gray-darker;
+
+// Buttons
+// -------------------------
+
+$btn-default-bg: $gray-lighter;
+$btn-default-color: $gray-darker;
+
+// Forms
+// -------------------------
+
+$input-border-radius: 2px;
+$input-border-focus: #999;
+$input-border: #f0f0f0;
+$input-color: #444;
+$input-color-placeholder: #999;
+$input-height-base: 48px;
+
+// Form states and alerts
+// -------------------------
+
+$state-success-bg: $brand-success;
+$state-info-bg: $brand-primary;
+$state-warning-bg: $brand-warning;
+$state-danger-bg: $brand-danger;
+
+// Navbar
+// -------------------------
+
+$navbar-height: 50px;
+$navbar-default-bg: rgba(255,255,255,0.95);
+$navbar-default-link-color: $gray-darker;
+$navbar-default-link-active-color: $brand-primary;
+$navbar-default-link-active-bg: transparent;
+$navbar-default-link-hover-color: $brand-primary;
+$navbar-default-link-hover-bg: transparent;
+$navbar-default-brand-color: $gray-darker;
+$navbar-default-brand-hover-color: $brand-primary;

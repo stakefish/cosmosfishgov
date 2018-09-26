@@ -1,0 +1,173 @@
+@import "components/icons";
+@import "components/page";
+@import "components/card";
+@import "components/buttons";
+@import "components/select";
+@import "components/form";
+
+
+body {
+  background-color: #fafbfc;
+  font-size: 18px;
+  line-height: 1.78;
+  color: $gray-darker;
+}
+
+// Typography
+// -------------------------
+
+a {
+  transition: all .4s cubic-bezier(.24,.45,.46,.92);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul,
+p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+small {
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+h1, .h1 {
+  font-size: 72px;
+  font-weight: 900;
+  line-height: normal;
+  color: $gray-darker;
+}
+
+h2, .h2 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: normal;
+  color: $gray-darker;
+}
+
+h3, .h3 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+  color: $gray-darker;
+}
+
+h4, .h4 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+  color: $gray-darker;
+  margin-bottom: 18px;
+}
+
+h5, .h5 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: normal;
+  margin-bottom: 10px;
+}
+
+.lead {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+  color: #9499a6;
+}
+
+
+.text-danger {
+  color: $brand-danger;
+}
+
+.text-gray {
+  color: #7d8499;
+}
+
+// Dropdowns
+// -------------------------
+
+.dropdown-menu > li > a {
+  font-weight: 300;
+}
+
+.btn-social {
+  padding: 10px 50px;
+
+  :first-child {
+    width: 38px;
+    line-height: 38px;
+  }
+}
+
+.btn-link {
+
+  &:hover {
+    color: $gray-darker;
+    text-decoration: none;
+    background-color: transparent;
+  }
+}
+
+// Form states and alerts
+// -------------------------
+
+.alert {
+  color: #fff;
+}
+
+// Navbar
+// -------------------------
+
+.navbar {
+  border: 0;
+  background-color: $white;
+  box-shadow: 0 2px 4px 0 rgba(148, 153, 166, 0.15);
+
+  .navbar-nav {
+    > li > a {
+      transition: color .4s cubic-bezier(.24,.45,.46,.92);
+    }
+  }
+}
+
+// Card
+// -------------------------
+
+.card {
+  border: 0;
+  border-radius: 8px;
+  background-color: $white;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px 0 rgba(125, 132, 153, 0.24);
+
+  &--accent {
+    background-color: $brand-primary;
+    color: $white;
+    box-shadow: 0 6px 12px 0 rgba(29, 70, 199, 0.24), 0 2px 4px 0 rgba(29, 70, 199, 0.12);
+  }
+}
+
+// Nav-pills
+// -------------------------
+
+.nav-pills {
+  .nav-link {
+    color: $brand-primary;
+    background-color: rgba($brand-primary, .1);
+  }
+
+  .nav-item.active .nav-link,
+  .nav-link.active,
+  .show > .nav-link {
+    background-color: $brand-primary;
+    color: $white;
+    opacity: 1;
+  }
+}

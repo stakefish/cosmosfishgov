@@ -1,0 +1,10 @@
+.page_filter
+  select.selectpicker(
+    multiple,
+    data-none-selected-text='Filters',
+    data-actions-box='true',
+    data-deselect-all-text="Show all"
+    )
+    each val in proposalStatuses
+      option(value= val) #{formatProposalStatus(val)}
+    option(data-divider='true')

@@ -1,0 +1,25 @@
+.subscribe_block
+  button.btn.btn-primary._open_form(type='button')
+    i.icon.icon--subscribe
+    | Subscribe
+
+  .popover#form_subscribe
+    .popover-body
+      h5 Enter your email to receive alert
+      form.form_subscribe(action='/alert', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group.form_group_inline
+          input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
+          button.btn.btn-primary.btn--circle._subscribe_btn(type='submit')
+            i.icon.icon--dropdown
+          .form_messages
+        .form-group.form-check
+          input.form-check-input._subscribe_checkbox(type='checkbox', name='onDeposit', id='onDeposit')
+          label.form-check-label(for='onDeposit')
+            | Deposit Period
+            span.text-muted when a proposal first appears
+        .form-group.form-check
+          input.form-check-input._subscribe_checkbox(type='checkbox', name='onVotingPeriod', id='onVotingPeriod', checked=true)
+          label.form-check-label(for='onVotingPeriod')
+            | Voting Period
+            span.text-muted when a proposal is ready for votes
