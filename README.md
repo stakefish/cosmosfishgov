@@ -1,5 +1,11 @@
 # Cosmos Governance Monitoring and Alerting
 
+This project monitors and displays all governance proposals and their results in real time with friendly UI. It also allows anyone to sign up to receive alerts on any new proposal that are entering either their deposit period and/or active voting period. For any questions related to this project, please contact us at: cosmos at bit dot fish  
+
+![Cosmos.fish](https://i.imgur.com/cTyMhyC.png)
+
+## Setup Instruction
+
 ### 1. Create a file named `.env` in the `cosmosfish` directory
 `.env` should have the following config:
 ```
